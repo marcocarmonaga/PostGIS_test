@@ -9,7 +9,7 @@ def connect():
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
-        #csv_file = str(input('Ingrese la dirección del archivo csv: '))
+        csv_file = str(input('Ingrese la dirección del archivo csv: '))
         # Reading connection parameters
         params = config()
 
@@ -24,7 +24,7 @@ def connect():
 
 	# Inserting values from csv_file
         print('Inserting values\n')
-        with open('./data/test.csv','r') as csv_file:
+        with open(csv_file,'r') as csv_file:
             lines = csv.reader(csv_file)
             # Skipping first line of csv file
             next(lines)
@@ -75,7 +75,7 @@ def connect():
                 # Printint number of inputs skipped
                 for entries_skipped_value in entries_skipped_values:
                     if len(entries_skipped_value) != 0:
-                        print(f'{len(entries_skipped_value)} input(s) were updated\n')
+                        print(f'{len(entries_skipped_value)} input(s) were skipped\n. Please verify the log.json file.')
                     else:
                         pass
 
