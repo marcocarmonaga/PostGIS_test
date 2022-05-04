@@ -1,0 +1,7 @@
+name: sqlenv
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pandas
+prefix: /home/marcocarmonaga/miniconda3/envs/sqlenv
